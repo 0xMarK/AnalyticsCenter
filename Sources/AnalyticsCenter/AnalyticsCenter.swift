@@ -9,6 +9,8 @@ import Foundation
 
 open class AnalyticsCenter: AnalyticsService {
     
+    public static let shared: AnalyticsCenter = AnalyticsCenter()
+    
     private(set) var services: [AnalyticsService] = []
     
     public init() {
