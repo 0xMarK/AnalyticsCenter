@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AnalyticsEventNameFormatter {
+public protocol AnalyticsEventNameFormatter {
     
     func format(_ name: String) -> String
     

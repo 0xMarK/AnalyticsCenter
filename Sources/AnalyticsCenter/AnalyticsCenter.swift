@@ -7,21 +7,24 @@
 
 import Foundation
 
-class AnalyticsCenter {
+open class AnalyticsCenter: AnalyticsService {
     
     private(set) var services: [AnalyticsService] = []
     
-    func add(_ service: AnalyticsService) {
+    public init() {
+    }
+    
+    open func add(_ service: AnalyticsService) {
         services.append(service)
     }
     
-    func start() {
+    open func start() {
         services.forEach {
             $0.start()
         }
     }
     
-    func track(_ event: AnalyticsEvent) {
+    open func track(_ event: AnalyticsEvent) {
         services.forEach {
             $0.track(event)
         }

@@ -7,9 +7,9 @@
 
 import Foundation
 
-class EventNameFormatter: AnalyticsEventNameFormatter {
+open class EventNameFormatter: AnalyticsEventNameFormatter {
     
-    enum Format {
+    public enum Format {
         case camelCase
         case capitalizedCamelCase
         case snakeCase
@@ -24,13 +24,13 @@ class EventNameFormatter: AnalyticsEventNameFormatter {
         case uppercased
     }
     
-    let format: Format
+    public let format: Format
     
-    init(format: Format) {
+    public init(format: Format) {
         self.format = format
     }
     
-    func format(_ name: String) -> String {
+    open func format(_ name: String) -> String {
         let words = words(from: name)
         var result = ""
         switch format {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AnalyticsService {
+public protocol AnalyticsService {
     
     func start()
     
