@@ -18,20 +18,19 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         AnalyticsCenter.shared.start()
         return true
     }
-
+    
 }
 ```
 
-Track event `screenView`:
+Track event `selectContent`:
 
 ```swift
-class AppDelegate: NSObject, UIApplicationDelegate {
-    
+class StoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        analytics.track(AnalyticsEventEnum.screenView(screenClass: nil, screenName: "Top Stories"))
+        analytics.track(Event.selectContent(contentType: "story", itemID: "\(story.id)"))
     }
-
+    
 }
 ```
